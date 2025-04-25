@@ -4,9 +4,7 @@ import Message from "../models/message.model.js";
 import mongoose from "mongoose";
 // import { uploadOnCloudinary } from "../lib/cloudinary.js";
 import { cloudinary } from "../lib/cloudinary.js";
-import { getReceiverSocketId, io } from "../lib/socket.js";
-import client from "../lib/redisClient.js";
-
+import { getReceiverSocketId, io } from "../lib/socket.js"; 
 
 
 
@@ -129,8 +127,7 @@ export const getGroupMessages = async (req, res) => {
 
     let messages = await Message.find(
       { groupId }
-    )
-    await client.set('messages' + req.user?._id + req.params.id, JSON.stringify(messages), { EX: 60 });
+    ) 
 
     res.status(200).json(messages);
   } catch (error) {
@@ -177,8 +174,7 @@ export const sendGroupMessage = async (req, res) => {
       let x = getReceiverSocketId(group.members[i].toString());
       if (x)
         io.to(x).emit("notification", x);
-    }
-    await client.del('messages' + req.user._id + groupId);
+    } 
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendGroupMessage controller: ", error.message);
