@@ -10,7 +10,7 @@ export const AiChat = async (req, res) => {
     const { input, receiverId, groupId } = req.body;
     // let text = `You are an chat app Rapid AI named Rapid AI. A user named ${user} sent ${input} to you, reply accordingly`;
     let text = input
-    const response = await getResponse(text);
+    const response = await getResponse("You are a gym master ai, reply to the user as trainer where they asked/told : ",text);
 
 
     const newMessage = new Message({
@@ -78,7 +78,7 @@ export const streamAi = async (req, res) => {
     // let text = `You are an chat app Rapid AI named Rapid AI. A user named ${user} sent ${input} to you, reply accordingly`;
    
 
-    const response = await getResponse(input + "\nhere is the text for reference:\n" + data  );
+    const response = await getResponse("You are a gym master ai, reply to the user as trainer where they asked/told : ", input + "\nhere is the text for reference:\n" + data  );
 
     const newMessage = new Message({
       text: response,

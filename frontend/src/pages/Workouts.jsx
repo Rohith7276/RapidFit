@@ -7,6 +7,7 @@ import { DateCalendar } from "@mui/x-date-pickers";
 import { getWorkouts } from "../api";
 import { CircularProgress } from "@mui/material";
 import { useDispatch } from "react-redux";
+import plans from "../../public/plans.json";
 
 const Container = styled.div`
   flex: 1;
@@ -92,29 +93,23 @@ const Workouts = () => {
     getTodaysWorkout();
   }, [date]);
   return (
-    <Container className="text-context">
+    <Container className="text-context flex w-full items-center justify-center">
       <Wrapper>
         <Left>
           <Title>Select Date</Title>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DateCalendar
-            className="text-context bg-primary"
+              className="text-context bg-primary"
               onChange={(e) => setDate(`${e.$M + 1}/${e.$D}/${e.$y}`)}
             />
           </LocalizationProvider>
         </Left>
         <Right>
           <Section>
-            <SecTitle>Todays Workout</SecTitle>
-            {loading ? (
-              <CircularProgress />
-            ) : (
-              <CardWrapper>
-                {todaysWorkouts.map((workout) => (
-                  <WorkoutCard workout={workout} />
-                ))}
-              </CardWrapper>
-            )}
+            <video width="70%" controls autoPlay onLoadStart={(e) => e.target.play()} loop muted>
+              <source src="https://cdn-images.cure.fit/www-curefit-com/video/upload/c_fill,w_1400,ar_1.77,q_auto:eco,dpr_2,vc_auto,f_auto/video/test/we-are-cult-web.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </Section>
         </Right>
       </Wrapper>

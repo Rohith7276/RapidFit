@@ -7,6 +7,7 @@ import CategoryChart from "../components/cards/CategoryChart";
 import AddWorkout from "../components/AddWorkout";
 import WorkoutCard from "../components/cards/WorkoutCard";
 import { addWorkout, getDashboardDetails, getWorkouts } from "../api";
+import plans from "../../public/plans.json";
 
 const Container = styled.div`
   flex: 1;
@@ -133,13 +134,84 @@ const Dashboard = () => {
           />
         </FlexWrap>
 
-        <Section>
-          <Title>Todays Workouts</Title>
-          <CardWrapper>
-            {todaysWorkouts.map((workout) => (
-              <WorkoutCard workout={workout} />
-            ))}
-          </CardWrapper>
+        <Title>Todays Workouts</Title>
+        <Section className=" ">
+        <div className="flex mx-16 flex-wrap gap-28 justify-center items-center">
+         
+          <div>
+             <a
+            href="/workout"
+            className="flex items-center self-end justify-center cursor-pointer w-[18rem] h-[24rem] transition-all ease-in-out hover:scale-105 bg-gray-200 rounded shadow-md bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+          Bulk
+          </a>
+          </div>
+          <div>
+             <a
+            href="/workout"
+            className="flex items-center self-end justify-center cursor-pointer w-[18rem] h-[24rem] transition-all ease-in-out hover:scale-105 bg-gray-200 rounded shadow-md bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+          strength
+          </a>
+          </div>
+          <div>
+             <a
+            href="/workout"
+            className="flex items-center self-end justify-center cursor-pointer w-[18rem] h-[24rem] transition-all ease-in-out hover:scale-105 bg-gray-200 rounded shadow-md bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+          cardio
+          </a>
+          </div>
+          <div>
+             <a
+            href="/workout"
+            className="flex items-center self-end justify-center cursor-pointer w-[18rem] h-[24rem] transition-all ease-in-out hover:scale-105 bg-gray-200 rounded shadow-md bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+          cardio
+          </a>
+          </div>
+          <div>
+             <a
+            href="/workout"
+            className="flex items-center self-end justify-center cursor-pointer w-[18rem] h-[24rem] transition-all ease-in-out hover:scale-105 bg-gray-200 rounded shadow-md bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+          Muscle Endurance
+          </a>
+          </div>
+          <div>
+             <a
+            href="/workout"
+            className="flex items-center self-end justify-center cursor-pointer w-[18rem] h-[24rem] transition-all ease-in-out hover:scale-105 bg-gray-200 rounded shadow-md bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          >
+          Maintenance
+          </a>
+          </div>
+          </div>
+
         </Section>
       </Wrapper>
     </Container>

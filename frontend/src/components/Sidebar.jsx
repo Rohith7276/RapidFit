@@ -2,7 +2,7 @@ import { useEffect,  useState } from "react";
 import { useChatStore } from "../store/useChatStore";
 import { useAuthStore } from "../store/useAuthStore";
 import SidebarSkeleton from "./skeletons/SidebarSkeleton";
-import { Users } from "lucide-react";
+import { Dumbbell, Users } from "lucide-react";
 
 const Sidebar = () => {
   const { getUsers, getNotifications, getStreamCreation, streamMode,  sidebarRefresh, setSidebarRefresh, groups, users, selectedUser, setSelectedUser, isUsersLoading, addFriend } = useChatStore();
@@ -34,8 +34,8 @@ const Sidebar = () => {
     <aside className={`h-full w-24 ${streamMode?" ":"lg:w-72"} border-r border-base-300 flex flex-col transition-all duration-200`}>
       <div className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
-          <Users className="size-6" />
-          <span className={`hidden ${streamMode?"":"lg:block "} font-medium  `}>Contacts</span>
+          <Dumbbell className="size-6" />
+          <span className={`hidden ${streamMode?"":"lg:block "} font-medium  `}>HULKS</span>
         </div>
         {/* <input type="text" onChange={(e) => setFriendId(e.target.value)} />
         <button onClick={handleAddFriend}>add</button> */}
